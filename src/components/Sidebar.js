@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Home, User, GraduationCap, ShieldPlus } from "lucide-react";
+import { Home, User, GraduationCap, Gem } from "lucide-react";
 
 const Sidebar = () => {
   return (
@@ -28,7 +28,7 @@ const Sidebar = () => {
             href="/advanced"
             className="flex justify-center items-center gap-2"
           >
-            <ShieldPlus />
+            <Gem />
             Advanced
           </Link>
         </li>
