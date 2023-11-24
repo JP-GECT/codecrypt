@@ -8,7 +8,7 @@ export default function SideLayout({ children }) {
       <div className="w-[15%] bg-red-400 h-full">
         <Sidebar />
       </div>
-      <main>{children}</main>
+      <main className="w-full overflow-y-scroll">{children}</main>
     </div>
   );
 }
