@@ -1,4 +1,5 @@
 import Card from "./Card";
+import DataChart from "./DataChart";
 import WideCard from "./wideCard";
 
 const UserInfoResults = ({ result, setResult }) => {
@@ -16,12 +17,14 @@ const UserInfoResults = ({ result, setResult }) => {
         </div>
       )} */}
 
-      <div className="flex flex-col gap-4 h-screen ">
+      <div className="flex flex-col gap-4 h-screen items-center ">
 
       <WideCard />
       <Card />
+      <div className="w-1/2 bg-slate-100 drop-shadow-md rounded-xl">
+
+      <DataChart />
       </div>
-      
       <button
         className="w-full border-solid bg-slate-300 h-10 mt-10  "
         onClick={() => {
@@ -30,6 +33,9 @@ const UserInfoResults = ({ result, setResult }) => {
       >
         Go back to form
       </button>
+      </div>
+      
+      
     </>
   );
 };
