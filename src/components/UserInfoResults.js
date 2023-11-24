@@ -1,10 +1,10 @@
 import Card from "./Card";
+import WideCard from "./wideCard";
 
 const UserInfoResults = ({ result, setResult }) => {
   return (
     <>
-      <div>UserInfoResults</div>
-      {result && (
+      {/* {result && (
         <div>
           <div>Name {result.Name}</div>
           <div> Age {result.Age}</div>
@@ -14,17 +14,22 @@ const UserInfoResults = ({ result, setResult }) => {
           <div> Debt Amount {result.Debt.Amount}</div>
           <div> Debt Rate {result.Debt["Interest Rate"]}</div>
         </div>
-      )}
+      )} */}
 
+      <div className="flex flex-col gap-4 h-screen ">
+
+      <WideCard />
+      <Card />
+      </div>
+      
       <button
-        className="w-full border-solid"
+        className="w-full border-solid bg-slate-300 h-10 mt-10  "
         onClick={() => {
           setResult(null);
         }}
       >
         Go back to form
       </button>
-      <Card />
     </>
   );
 };
