@@ -69,15 +69,18 @@ function UserInfoForm({ setResult }) {
 
   return (
     <form>
+       <h1 className=" flex font-bold text-5xl text-[#4942E4] p-3 text-sans justify-center">
+        Let Us Know You
+      </h1>
       <div className="flex p-5">
-        <div className="flex-1 bg-red-300">
+        <div className="flex-1  max-w-[600px] mr-2">
           <div className="space-y-12">
-            <div className="border-b border-gray-900/10 pb-12">
-              <h2 className="text-center font-sans font-bold text-5xl mt-3">
+            <div className=" pb-12">
+              <h2 className="text-start font-sans font-bold text-5xl mt-3 text-slate-500">
                 Personal Information
               </h2>
 
-              <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+              <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 bg-white drop-shadow-lg p-8 mr-2">
                 <div className="sm:col-span-4">
                   <label
                     htmlFor="name"
@@ -167,12 +170,12 @@ function UserInfoForm({ setResult }) {
           </div>
         </div>
         <div className="flex-1 w-1/2">
-          <div className="border-b border-gray-900/10 pb-12">
-            <h2 className="text-center font-sans font-bold text-5xl mt-3">
+          <div className="">
+            <h2 className="text-center font-sans font-bold text-5xl mt-3 text-slate-500">
               Debt Information
             </h2>
 
-            <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+            <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 bg-white drop-shadow-lg p-7">
               <div className="sm:col-span-3">
                 <label
                   htmlFor="debtAmount"
@@ -229,13 +232,13 @@ function UserInfoForm({ setResult }) {
             </div>
           </div>
 
-          <div className="border-b border-gray-900/10 pb-12">
-            <div className="mt-10 space-y-10">
+          <div className="p-1">
+            <div className="space-y-10">
               <fieldset>
-                <legend className="text-center font-sans font-bold text-5xl mt-3">
+                <legend className="text-center font-sans font-bold text-5xl text-slate-500 ">
                   Family
                 </legend>
-                <div className="mt-6 space-y-6">
+                <div className="mt-6 space-y-6 bg-white drop-shadow-xl p-7">
                   <div className="flex items-center gap-x-3">
                     <input
                       id="familyYes"
@@ -275,31 +278,10 @@ function UserInfoForm({ setResult }) {
               </fieldset>
             </div>
           </div>
-          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-            <div className="sm:col-span-4">
-              <label
-                htmlFor="investmentType"
-                className="block text-xl font-semibold leading-6 text-gray-900"
-              >
-                Investment Type
-              </label>
-              <div className="mt-2">
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                  <input
-                    type="text"
-                    name="investmentType"
-                    id="investmentType"
-                    value={formData.investmentType}
-                    onChange={handleChange}
-                    className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 w-full"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+        
         </div>
       </div>
-      <div className="mt-6 flex items-center justify-center gap-x-6">
+      <div className="mt-1 mb-2 flex items-center justify-center gap-x-6">
         <button
           type="button"
           className="text-lg font-semibold leading-6 text-gray-900 "
@@ -308,7 +290,7 @@ function UserInfoForm({ setResult }) {
         </button>
         <button
           type="submit"
-          className="rounded-md bg-indigo-600 py-2 text-md px-6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          className=" bg-indigo-600 py-2 text-md px-6 font-semibold text-white shadow-sm rounded hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           onClick={handleSubmit}
         >
           Submit
