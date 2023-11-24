@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-function UserInfoForm({ setResponseObj }) {
+function UserInfoForm({ setResult }) {
   const [formData, setFormData] = useState({
     name: "",
     age: "",
@@ -37,31 +37,34 @@ function UserInfoForm({ setResponseObj }) {
     };
 
     // Sending the userInfo object to the backend
-    try {
-      const response = await fetch("http://localhost:8000/api/user-info", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ "User Information": userInfo }),
-      });
+    // try {
+    //   const response = await fetch("http://localhost:8000/api/user-info", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({ "User Information": userInfo }),
+    //   });
 
-      if (response.ok) {
-        // Handle success
-        console.log("User information sent successfully.");
-        const data = await response.json();
-        const jsn = JSON.parse(data);
-        // setResponseObj(data?.processedData);
-        setResponseObj(jsn);
-        // console.log(jsn["User Information"]);
-        // console.log(data["Expense Allocation"]);
-      } else {
-        // Handle errors
-        console.error("Failed to send user information.");
-      }
-    } catch (error) {
-      console.error("Error sending user information:", error);
-    }
+    //   if (response.ok) {
+    //     // Handle success
+    //     console.log("User information sent successfully.");
+    //     const data = await response.json();
+    //     const jsn = JSON.parse(data);
+    //     // setResponseObj(data?.processedData);
+    //     setResponseObj(jsn);
+    //     // console.log(jsn["User Information"]);
+    //     // console.log(data["Expense Allocation"]);
+    //   } else {
+    //     // Handle errors
+    //     console.error("Failed to send user information.");
+    //   }
+    // } catch (error) {
+    //   console.error("Error sending user information:", error);
+    // }
+
+    setResult(userInfo);
+    console.log(userInfo);
   };
 
   return (

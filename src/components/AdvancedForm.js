@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const Advanced = ({ setResponseObj }) => {
+const Advanced = ({ setAdvancedResult }) => {
   const [advancedData, setAdvancedData] = useState({
     risk: "1",
     options: "",
@@ -34,33 +34,36 @@ const Advanced = ({ setResponseObj }) => {
     };
 
     // Sending the userInfo object to the backend
-    try {
-      const response = await fetch(
-        "http://localhost:8000/api/user-advanced-info",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ "Survey Information": surveyInfo }),
-        }
-      );
+    // try {
+    //   const response = await fetch(
+    //     "http://localhost:8000/api/user-advanced-info",
+    //     {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify({ "Survey Information": surveyInfo }),
+    //     }
+    //   );
 
-      if (response.ok) {
-        // Handle success
-        console.log("User information sent successfully.");
-        const data = await response.json();
-        // console.log(data.percentage);
-        // console.log(data.funds);
-        // console.log(typeof data);
-        setResponseObj(data);
-      } else {
-        // Handle errors
-        console.error("Failed to send user information.");
-      }
-    } catch (error) {
-      console.error("Error sending user information:", error);
-    }
+    //   if (response.ok) {
+    //     // Handle success
+    //     console.log("User information sent successfully.");
+    //     const data = await response.json();
+    //     // console.log(data.percentage);
+    //     // console.log(data.funds);
+    //     // console.log(typeof data);
+    //     setResponseObj(data);
+    //   } else {
+    //     // Handle errors
+    //     console.error("Failed to send user information.");
+    //   }
+    // } catch (error) {
+    //   console.error("Error sending user information:", error);
+    // }
+
+    setAdvancedResult(surveyInfo);
+    console.log(surveyInfo);
   };
 
   return (
