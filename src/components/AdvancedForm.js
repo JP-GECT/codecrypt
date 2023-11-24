@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const Advanced = ({ setAdvancedResult }) => {
+const Advanced = ({ setAdvancedResult, setIsLoading }) => {
   const [advancedData, setAdvancedData] = useState({
     risk: "1",
     options: "",
@@ -62,8 +62,13 @@ const Advanced = ({ setAdvancedResult }) => {
     //   console.error("Error sending user information:", error);
     // }
 
-    setAdvancedResult(surveyInfo);
-    console.log(surveyInfo);
+    setIsLoading(true);
+
+    // setResult(userInfo);
+    setTimeout(() => {
+      setAdvancedResult(surveyInfo);
+      setIsLoading(false);
+    }, 2000);
   };
 
   return (

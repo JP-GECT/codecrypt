@@ -11,15 +11,6 @@ const UserInfo = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   return (
-    // <div className="w-[100%]">
-    //   {!result && <UserInfoForm setResult={setResult} />}
-    //   {result && (
-    //     <UserInfoResults
-    //       result={result}
-    //       setResult={setResult}
-    //     />
-    //   )}
-    // </div>
     <>
       {isLoading ? (
         // <h1 className="flex justify-center items-center w-full h-screen font-extrabold">

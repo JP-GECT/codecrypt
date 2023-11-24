@@ -15,3 +15,35 @@ export const embedIds = [
       "Do you want to learn how to turn your money into more money? Do you want to achieve financial freedom and live off your passive income? If you answered is yes, then you are in the right place. In this video, I will show you How to Grow Your Wealth wisely and Live Off Your Investments.",
   },
 ];
+
+export const digitalGoldData = [
+  { name: "Paytm Digital Gold" },
+  { name: "PhonePe Digital Gold" },
+  { name: "Google Pay Digital Gold" },
+  { name: "SafeGold" },
+];
+
+export const fdData = [
+  { name: "Bajaj Finance Limited", interestRate: 8.35 },
+  { name: "SBI Bank", interestRate: 7.1 },
+  { name: "ICICI Bank", interestRate: 7.1 },
+  { name: "Axis Bank", interestRate: 7.1 },
+  { name: "HDFC Bank", interestRate: 7.25 },
+  { name: "Bank of Baroda", interestRate: 7.25 },
+  { name: "IDFC Bank", interestRate: 7.5 },
+  { name: "Kotak Mahindra Bank", interestRate: 7.25 },
+  { name: "Canara Bank", interestRate: 7.25 },
+  { name: "Yes Bank", interestRate: 7.75 },
+];
+
+export const dbtMutualFundData = [
+  { name: "ICICI Prudential Medium Term Fund", interestRate: 8.03 },
+  { name: "Axis Short Term Fund", interestRate: 7.67 },
+  { name: "Axis Strategic Bond Fund", interestRate: 7.75 },
+  { name: "SBI Magnum Medium Duration Fund", interestRate: 8.36 },
+  { name: "Nippon India Nivesh Lakshya Fund", interestRate: 9.5 },
+  { name: "ICICI Prudential Short Term Fund", interestRate: 8.19 },
+  { name: "Baroda BNP Paribas Short Duration Fund", interestRate: 6.92 },
+  { name: "ICICI Prudential Long Term Bond Fund", interestRate: 7.85 },
+  { name: "Mirae Asset Short Term Fund", interestRate: 7.13 },
+];
