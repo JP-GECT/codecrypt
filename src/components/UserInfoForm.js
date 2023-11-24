@@ -69,7 +69,7 @@ function UserInfoForm({ setResult }) {
 
   return (
     <form>
-      <div className="flex">
+      <div className="flex p-5">
         <div className="flex-1 bg-red-300">
           <div className="space-y-12">
             <div className="border-b border-gray-900/10 pb-12">

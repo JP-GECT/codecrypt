@@ -17,6 +17,7 @@ const Sidebar = () => {
           <Link href="/education">Education</Link>
         </li>
       </ul>
+      <p className="bottom-0 fixed">sdff</p>
     </div>
   );
 };
