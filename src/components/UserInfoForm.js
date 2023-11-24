@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-function UserInfoForm({ setResult }) {
+function UserInfoForm({ setResult, setIsLoading }) {
   const [formData, setFormData] = useState({
     name: "",
     age: "",
@@ -63,13 +63,18 @@ function UserInfoForm({ setResult }) {
     //   console.error("Error sending user information:", error);
     // }
 
-    setResult(userInfo);
-    console.log(userInfo);
+    setIsLoading(true);
+
+    // setResult(userInfo);
+    setTimeout(() => {
+      setResult(userInfo);
+      setIsLoading(false);
+    }, 2000);
   };
 
   return (
     <form>
-       <h1 className=" flex font-bold text-5xl text-[#4942E4] p-3 text-sans justify-center">
+      <h1 className=" flex font-bold text-5xl text-[#4942E4] p-3 text-sans justify-center">
         Let Us Know You
       </h1>
       <div className="flex p-5">
@@ -278,7 +283,6 @@ function UserInfoForm({ setResult }) {
               </fieldset>
             </div>
           </div>
-        
         </div>
       </div>
       <div className="mt-1 mb-2 flex items-center justify-center gap-x-6">

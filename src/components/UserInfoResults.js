@@ -2,6 +2,14 @@ import Card from "./Card";
 import DataChart from "./DataChart";
 import WideCard from "./wideCard";
 
+// import schoolImg from "../../public/school.jpg";
+import EmergencyFund from "../../public/Emergency-Fund.png";
+import HealthCare from "../../public/Healthcare.png";
+import LivingExpenses from "../../public/Living-Expenses.jpg";
+import DebtRepayment from "../../public/Debt-Repayment.jpg";
+import Miscellaneous from "../../public/Miscellaneous.jpg";
+import SavingsAndInvestment from "../../public/Savings-and-Investment.jpg";
+
 const UserInfoResults = ({ result, setResult }) => {
   return (
     <>
@@ -18,24 +26,57 @@ const UserInfoResults = ({ result, setResult }) => {
       )} */}
 
       <div className="flex flex-col gap-4 h-screen items-center ">
-
-      <WideCard />
-      <Card />
-      <div className="w-1/2 bg-slate-100 drop-shadow-md rounded-xl">
-
-      <DataChart />
+        <WideCard />
+        <div className="flex flex-wrap gap-5 justify-around">
+          <Card
+            title="Emergency Fund"
+            img={EmergencyFund}
+            description="this is the description of the expences for a specific type"
+            amount={5000}
+          />
+          <Card
+            title="Health Care and Insurance"
+            img={HealthCare}
+            description="this is the description of the expences for a specific type"
+            amount={5000}
+          />
+          <Card
+            title="LivingExpenses"
+            img={LivingExpenses}
+            description="this is the description of the expences for a specific type"
+            amount={5000}
+          />
+          <Card
+            title="Debt Repayment"
+            img={DebtRepayment}
+            description="this is the description of the expences for a specific type"
+            amount={5000}
+          />
+          <Card
+            title="Miscellaneous"
+            img={Miscellaneous}
+            description="this is the description of the expences for a specific type"
+            amount={5000}
+          />
+          <Card
+            title="Savings And Investment"
+            img={SavingsAndInvestment}
+            description="this is the description of the expences for a specific type"
+            amount={5000}
+          />
+        </div>
+        <div className="w-1/2 bg-slate-100 drop-shadow-md rounded-xl">
+          <DataChart />
+        </div>
+        <button
+          className="w-full border-solid bg-slate-300 h-10 mt-10  "
+          onClick={() => {
+            setResult(null);
+          }}
+        >
+          Go back to form
+        </button>
       </div>
-      <button
-        className="w-full border-solid bg-slate-300 h-10 mt-10  "
-        onClick={() => {
-          setResult(null);
-        }}
-      >
-        Go back to form
-      </button>
-      </div>
-      
-      
     </>
   );
 };
