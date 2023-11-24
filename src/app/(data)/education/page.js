@@ -4,14 +4,21 @@ import { embedIds } from "@/_constants";
 
 const Education = () => {
   return (
-    <div className="flex flex-col gap-4 p-4">
+    <div>
+      <h1 className="text-[50px] font-bold  font-sans pl-4">Education</h1>
+       <div className="flex flex-col gap-4 p-4">
       {embedIds.map((item) => (
-        <VideoCard
+        <VideoCard 
+        key={item.id}
           embedId={item.id}
+          heading = {item.heading}
           description={item.description}
         />
       ))}
     </div>
+
+    </div>
+   
   );
 };
 export default Education;

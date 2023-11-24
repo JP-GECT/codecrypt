@@ -4,38 +4,39 @@ import { Home, User, GraduationCap, Gem } from "lucide-react";
 
 const Sidebar = () => {
   return (
-    <div className="bg-green-300 h-screen w-[100%]">
+    <div className="bg-[#4b42ff]  h-screen w-[100%]">
+      <h1 className="text-center text-[25px] p-5 text-white font-bold">INVESTHERE</h1>
       <ul className="flex flex-col justify-start items-start">
-        <li className="p-4">
+        <li className="p-4 hover:bg-blue-800 w-full">
           <Link
             href="/"
-            className="flex justify-center items-center gap-2"
+            className="flex text-white text-lg font-medium justify-start items-center gap-2 "
           >
-            <Home />
+            <Home className="text-white" />
             Home
           </Link>
         </li>
-        <li className="p-4">
+        <li className="p-4 hover:bg-blue-800 w-full">
           <Link
             href="/userinfo"
-            className="flex justify-center items-center gap-2"
+            className="flex justify-start  items-center gap-2 text-white text-lg font-medium "
           >
             <User /> User Info
           </Link>
         </li>
-        <li className="p-4">
+        <li className="p-4 hover:bg-blue-800 w-full ">
           <Link
             href="/advanced"
-            className="flex justify-center items-center gap-2"
+            className="flex justify-start items-center gap-2 text-white text-lg font-medium "
           >
             <Gem />
             Advanced
           </Link>
         </li>
-        <li className="p-4">
+        <li className="p-4 hover:bg-blue-800 w-full">
           <Link
             href="/education"
-            className="flex justify-center items-center gap-2"
+            className="flex justify-start  items-center gap-2 text-white text-lg font-medium"
           >
             <GraduationCap />
             Education
