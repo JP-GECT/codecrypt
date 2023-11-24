@@ -1,3 +1,5 @@
+import Card from "./Card";
+
 const UserInfoResults = ({ result, setResult }) => {
   return (
     <>
@@ -22,6 +24,7 @@ const UserInfoResults = ({ result, setResult }) => {
       >
         Go back to form
       </button>
+      <Card />
     </>
   );
 };

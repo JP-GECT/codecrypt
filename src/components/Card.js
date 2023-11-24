@@ -1,13 +1,15 @@
+import schoolImg from "../../public/school.jpg";
+
 const Card = () => {
   return (
     <div>
       <img
-        src="@/school.jpg"
-        alt=""
+        src={schoolImg}
+        alt="school"
       />
       <h2>Card Title</h2>
       <p>Card Description</p>
-      <button></button>
+      <button>Click</button>
     </div>
   );
 };
