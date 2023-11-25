@@ -10,6 +10,7 @@ function UserInfoForm({ setResult, setIsLoading }) {
     annualIncome: "",
     debtAmount: "0",
     debtInterestRate: "0",
+    debtDuration: "0",
     family: "No", // No as default
     investmentType: "Savings",
   });
@@ -31,6 +32,7 @@ function UserInfoForm({ setResult, setIsLoading }) {
       Debt: {
         Amount: formData.debtAmount,
         "Interest Rate": formData.debtInterestRate,
+        Duration: formData.debtDuration
       },
       Family: formData.family,
       "Investment Type": formData.investmentType,
@@ -235,6 +237,8 @@ function UserInfoForm({ setResult, setIsLoading }) {
                     type="number"
                     name="debtDuration"
                     id="debtDuration"
+                    value={formData.debtDuration}
+                    onChange={handleChange}
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>

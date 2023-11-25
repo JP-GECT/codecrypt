@@ -52,16 +52,20 @@ const Advanced = ({ setAdvancedResult, setIsLoading }) => {
         const data = await response.json();
         console.log(data);
         console.log(typeof data);
-        const response1 = data.response
-        const response2 = data.response2
+        // const response1 = data.response
+        // const response2 = data.response2
 
-        print(typeof response1)
-        print(typeof response2)
+        // print(typeof response1)
+        // print(typeof response2)
         // console.log(data.percentage);
         // console.log(data.funds);
         // console.log(typeof data);
         // setResponseObj(data);
         setAdvancedResult(data)
+        console.log(data["Debt Mutual Fund"]);
+        console.log(data["Equity Mutual Fund"]);
+        console.log(data["Fixed Deposit"]);
+        console.log(data["Digital Gold"]);
       } else {
         // Handle errors
         console.error("Failed to send user information.");
