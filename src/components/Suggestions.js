@@ -1,4 +1,9 @@
-import { fdData, dbtMutualFundData, digitalGoldData } from "@/_constants";
+import {
+  fdData,
+  dbtMutualFundData,
+  digitalGoldData,
+  eqtMutualFundData,
+} from "@/_constants";
 
 const Suggestions = ({ funds }) => {
   return (
@@ -61,49 +66,17 @@ const Suggestions = ({ funds }) => {
             <h1 className=" font-bold  text-center text-3xl text-gray-500 mb-2 pt-2 text-sans">
               EQUITY MUTUAL FUND
             </h1>
-            Coming Soon...
-            {/* <div className="h-1 w-14 bg-blue-500 mb-2 rounded-md"></div>
-            <h1 className="font-semibold  text-center text-xl text-[#2616b7] mb-2 pt-2 text-sans">
-              Large Mutual Funds Ranking
-            </h1>{" "}
-            <br />
+            <div className="h-1 w-14 bg-blue-500 mb-2 rounded-md"></div>
             <ul>
-              {funds.Large_Mutual_Funds_Ranking.map((element) => (
-                <li className="problem-statement py-1 rounded-md   mb-3 px-14 shadow-lg text-sans bg-blue-200 ">
-                  Rank : {element.Rank} <br />
-                  {element.Fund_Name} <br />
-                  Expected Return: {element.Expected_Return} %
-                </li>
-              ))}
+              {eqtMutualFundData.Mutual_Funds_Ranking.Small_Cap.map(
+                (element) => (
+                  <li className="problem-statement py-1 rounded-md   mb-3 px-14 shadow-lg text-sans bg-blue-200 ">
+                    {element.name} <br />
+                    Interest Rate : {element.interestRate}
+                  </li>
+                )
+              )}
             </ul>
-            <br />
-            <h1 className="font-semibold  text-center text-xl text-[#2616b7] mb-2 pt-2 text-sans">
-              Mid Cap Mutual Funds Ranking
-            </h1>{" "}
-            <br />
-            <ul>
-              {funds.Midcap_Mutual_Funds_Ranking.map((element) => (
-                <li className="problem-statement py-1 rounded-md   mb-3 px-14 shadow-lg text-sans bg-blue-200 ">
-                  Rank : {element.Rank} <br />
-                  {element.Fund_Name} <br />
-                  Expected Return: {element.Expected_Return} %
-                </li>
-              ))}
-            </ul>{" "}
-            <br />
-            <h1 className="font-semibold  text-center text-xl text-[#2616b7] mb-2 pt-2 text-sans">
-              Small Mutual Funds Ranking
-            </h1>{" "}
-            <br />
-            <ul>
-              {funds.small_Mutual_Funds_Ranking.map((element) => (
-                <li className="problem-statement py-1 rounded-md   mb-3 px-14 shadow-lg text-sans bg-blue-200 ">
-                  Rank : {element.Rank} <br />
-                  {element.Fund_Name} <br />
-                  Expected Return: {element.Expected_Return} %
-                </li>
-              ))}
-            </ul> */}
           </div>
         </div>
       </div>
