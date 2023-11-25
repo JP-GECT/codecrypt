@@ -138,7 +138,7 @@ function UserInfoForm({ setResult, setIsLoading }) {
                     htmlFor="name"
                     className="block text-xl font-semibold leading-6 text-gray-900"
                   >
-                    Annual Income
+                    Monthly Income
                   </label>
                   <div className="mt-2">
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">

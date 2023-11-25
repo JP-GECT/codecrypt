@@ -6,7 +6,7 @@ const Sidebar = () => {
   return (
     <div className="bg-[#4b42ff]  h-screen w-[100]">
       <div className="flex justify-around items-center">
-        <Wallet className="h-10 w-10" />
+        <Wallet className="h-10 w-10 text-white" />
         <h1 className="text-center text-[25px] p-5 text-white font-bold">
           InvestHere
         </h1>
