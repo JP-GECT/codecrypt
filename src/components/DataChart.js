@@ -1,25 +1,19 @@
 import { PieChart } from "@mui/x-charts/PieChart";
 
-const DataChart = () =>{
+const DataChart = ({expenseAllocation}) =>{
 
-    // const a = parseInt(expenseAllocation["Miscellaneous"]["Monthly Allocation"]);
-    // const b = parseInt(expenseAllocation["Debt Repayment"]["Monthly Allocation"]);
-    // const c = parseInt(expenseAllocation["Emergency Fund"]["Monthly Allocation"]);
-    // const d = parseInt(
-    //   expenseAllocation["Healthcare and Insurance"]["Monthly Allocation"]
-    // );
-    // const e = parseInt(
-    //   expenseAllocation["Living Expenses"]["Monthly Allocation"]
-    // );
-    // const f = parseInt(
-    //   expenseAllocation["Savings and Investments"]["Monthly Allocation"]
-    // );
-    const a = 100
-    const b = 100
-    const c = 100
-    const d = 10
-    const e = 200
-    const f = 50
+    const b = parseInt(expenseAllocation["Debt Repayment"]["Monthly Allocation"]);
+    const c = parseInt(expenseAllocation["Emergency Fund"]["Monthly Allocation"]);
+    const d = parseInt(
+      expenseAllocation["Healthcare and Insurance"]["Monthly Allocation"]
+    );
+    const e = parseInt(
+      expenseAllocation["Living Expenses"]["Monthly Allocation"]
+    );
+    const f = parseInt(
+      expenseAllocation["Savings and Investments"]["Monthly Allocation"]
+    );
+    
     return(
         <div className=" flex justify-center">
             <PieChart 
@@ -30,7 +24,7 @@ const DataChart = () =>{
                     { id: 1, label: "Healthcare and Insurance", value: d },
                     { id: 2, label: "Living Expenses", value: e },
                     { id: 3, label: "Debt Repayment", value: b },
-                    { id: 4, label: "Miscellaneous", value: a },
+                    // { id: 4, label: "Miscellaneous", value: a },
                     { id: 5, label: "Savings & investments", value: f },
                   ],
                 },

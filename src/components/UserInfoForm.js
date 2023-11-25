@@ -37,39 +37,44 @@ function UserInfoForm({ setResult, setIsLoading }) {
     };
 
     // Sending the userInfo object to the backend
-    // try {
-    //   const response = await fetch("http://localhost:8000/api/user-info", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({ "User Information": userInfo }),
-    //   });
+    try {
+      // setIsLoading();
+      const response = await fetch("http://localhost:5000/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ "User Information": userInfo }),
+      });
 
-    //   if (response.ok) {
-    //     // Handle success
-    //     console.log("User information sent successfully.");
-    //     const data = await response.json();
-    //     const jsn = JSON.parse(data);
-    //     // setResponseObj(data?.processedData);
-    //     setResponseObj(jsn);
-    //     // console.log(jsn["User Information"]);
-    //     // console.log(data["Expense Allocation"]);
-    //   } else {
-    //     // Handle errors
-    //     console.error("Failed to send user information.");
-    //   }
-    // } catch (error) {
-    //   console.error("Error sending user information:", error);
-    // }
+      if (response.ok) {
+        // Handle success
+        console.log("User information sent successfully.");
+        const data = await response.json();
+        console.log(data);
+        // console.log(typeof data);
+        // const jsn = JSON.parse(data);
+        // setResponseObj(data?.processedData);
+        setResult(data);
+        // console.log(result);
+        // console.log(result["Expense Allocation"]["Emergency Fund"]["Monthly Allocation"]);
+        // console.log(jsn["User Information"]);
+        // console.log(data["Expense Allocation"]);
+      } else {
+        // Handle errors
+        console.error("Failed to send user information.");
+      }
+    } catch (error) {
+      console.error("Error sending user information:", error);
+    }
 
-    setIsLoading(true);
+    // setIsLoading(true);
 
-    // setResult(userInfo);
-    setTimeout(() => {
-      setResult(userInfo);
-      setIsLoading(false);
-    }, 2000);
+    // // setResult(userInfo);
+    // setTimeout(() => {
+    //   setResult(userInfo);
+    //   setIsLoading(false);
+    // }, 2000);
   };
 
   return (
