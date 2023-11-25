@@ -7,7 +7,6 @@ import EmergencyFund from "../../public/Emergency-Fund.png";
 import HealthCare from "../../public/Healthcare.png";
 import LivingExpenses from "../../public/Living-Expenses.jpg";
 import DebtRepayment from "../../public/Debt-Repayment.jpg";
-import Miscellaneous from "../../public/Miscellaneous.jpg";
 import SavingsAndInvestment from "../../public/Savings-and-Investment.jpg";
 
 const UserInfoResults = ({ result, setResult }) => {
@@ -33,25 +32,25 @@ const UserInfoResults = ({ result, setResult }) => {
           <Card
             title="Emergency Fund"
             img={EmergencyFund}
-            description="this is the description of the expences for a specific type"
+            description="Be cautious, be safe"
             amount={result["Expense Allocation"]["Emergency Fund"]["Monthly Allocation"]}
           />
           <Card
             title="Health Care and Insurance"
             img={HealthCare}
-            description="this is the description of the expences for a specific type"
+            description="Protect yourself and your beloved ones"
             amount={result["Expense Allocation"]["Healthcare and Insurance"]["Monthly Allocation"]}
           />
           <Card
-            title="LivingExpenses"
+            title="Living Expenses"
             img={LivingExpenses}
-            description="this is the description of the expences for a specific type"
+            description="Your basic necessities like food, water, electricity, transport etc."
             amount={result["Expense Allocation"]["Living Expenses"]["Monthly Allocation"]}
           />
           <Card
             title="Debt Repayment"
             img={DebtRepayment} 
-            description="this is the description of the expences for a specific type"
+            description="Repay debts systematically and be tension free"
             amount={result["Expense Allocation"]["Debt Repayment"]["Monthly Allocation"]}
           />
           {/* <Card
@@ -63,7 +62,7 @@ const UserInfoResults = ({ result, setResult }) => {
           <Card
             title="Savings And Investment"
             img={SavingsAndInvestment}
-            description="this is the description of the expences for a specific type"
+            description="The bonus in your hands. Save it or Invest it or do both"
             amount={result["Expense Allocation"]["Savings and Investments"]["Monthly Allocation"]}
           />
         </div>

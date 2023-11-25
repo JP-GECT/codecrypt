@@ -11,7 +11,7 @@ const WideCard = ({location}) => {
       />
       <div className='flex flex-col gap-3 justify-center align-middle items-center flex-1'>
       <h2 className='font-bold text-[60px]   text-slate-500'>{location}</h2>
-      <p className='text-sm font-light'>this is the description of the expences for a specific type</p>
+      {/* <p className='text-sm font-light'>this is the description of the expences for a specific type</p> */}
       
       </div>
       
