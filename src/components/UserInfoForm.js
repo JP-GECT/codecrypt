@@ -10,6 +10,7 @@ function UserInfoForm({ setResult, setIsLoading }) {
     annualIncome: "",
     debtAmount: "0",
     debtInterestRate: "0",
+    debtDuration: "0",
     family: "No", // No as default
     investmentType: "Savings",
   });
@@ -31,45 +32,51 @@ function UserInfoForm({ setResult, setIsLoading }) {
       Debt: {
         Amount: formData.debtAmount,
         "Interest Rate": formData.debtInterestRate,
+        Duration: formData.debtDuration
       },
       Family: formData.family,
       "Investment Type": formData.investmentType,
     };
 
     // Sending the userInfo object to the backend
-    // try {
-    //   const response = await fetch("http://localhost:8000/api/user-info", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({ "User Information": userInfo }),
-    //   });
+    try {
+      // setIsLoading();
+      const response = await fetch("http://localhost:5000/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ "User Information": userInfo }),
+      });
 
-    //   if (response.ok) {
-    //     // Handle success
-    //     console.log("User information sent successfully.");
-    //     const data = await response.json();
-    //     const jsn = JSON.parse(data);
-    //     // setResponseObj(data?.processedData);
-    //     setResponseObj(jsn);
-    //     // console.log(jsn["User Information"]);
-    //     // console.log(data["Expense Allocation"]);
-    //   } else {
-    //     // Handle errors
-    //     console.error("Failed to send user information.");
-    //   }
-    // } catch (error) {
-    //   console.error("Error sending user information:", error);
-    // }
+      if (response.ok) {
+        // Handle success
+        console.log("User information sent successfully.");
+        const data = await response.json();
+        console.log(data);
+        // console.log(typeof data);
+        // const jsn = JSON.parse(data);
+        // setResponseObj(data?.processedData);
+        setResult(data);
+        // console.log(result);
+        // console.log(result["Expense Allocation"]["Emergency Fund"]["Monthly Allocation"]);
+        // console.log(jsn["User Information"]);
+        // console.log(data["Expense Allocation"]);
+      } else {
+        // Handle errors
+        console.error("Failed to send user information.");
+      }
+    } catch (error) {
+      console.error("Error sending user information:", error);
+    }
 
-    setIsLoading(true);
+    // setIsLoading(true);
 
-    // setResult(userInfo);
-    setTimeout(() => {
-      setResult(userInfo);
-      setIsLoading(false);
-    }, 2000);
+    // // setResult(userInfo);
+    // setTimeout(() => {
+    //   setResult(userInfo);
+    //   setIsLoading(false);
+    // }, 2000);
   };
 
   return (
@@ -133,7 +140,7 @@ function UserInfoForm({ setResult, setIsLoading }) {
                     htmlFor="name"
                     className="block text-xl font-semibold leading-6 text-gray-900"
                   >
-                    Annual Income
+                    Monthly Income
                   </label>
                   <div className="mt-2">
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
@@ -230,6 +237,8 @@ function UserInfoForm({ setResult, setIsLoading }) {
                     type="number"
                     name="debtDuration"
                     id="debtDuration"
+                    value={formData.debtDuration}
+                    onChange={handleChange}
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>

@@ -34,41 +34,53 @@ const Advanced = ({ setAdvancedResult, setIsLoading }) => {
     };
 
     // Sending the userInfo object to the backend
-    // try {
-    //   const response = await fetch(
-    //     "http://localhost:8000/api/user-advanced-info",
-    //     {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify({ "Survey Information": surveyInfo }),
-    //     }
-    //   );
+    try {
+      const response = await fetch(
+        "http://localhost:5000/new",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ "Survey Information": surveyInfo }),
+        }
+      );
 
-    //   if (response.ok) {
-    //     // Handle success
-    //     console.log("User information sent successfully.");
-    //     const data = await response.json();
-    //     // console.log(data.percentage);
-    //     // console.log(data.funds);
-    //     // console.log(typeof data);
-    //     setResponseObj(data);
-    //   } else {
-    //     // Handle errors
-    //     console.error("Failed to send user information.");
-    //   }
-    // } catch (error) {
-    //   console.error("Error sending user information:", error);
-    // }
+      if (response.ok) {
+        // Handle success
+        console.log("User information sent successfully.");
+        const data = await response.json();
+        console.log(data);
+        console.log(typeof data);
+        // const response1 = data.response
+        // const response2 = data.response2
 
-    setIsLoading(true);
+        // print(typeof response1)
+        // print(typeof response2)
+        // console.log(data.percentage);
+        // console.log(data.funds);
+        // console.log(typeof data);
+        // setResponseObj(data);
+        setAdvancedResult(data)
+        console.log(data["Debt Mutual Fund"]);
+        console.log(data["Equity Mutual Fund"]);
+        console.log(data["Fixed Deposit"]);
+        console.log(data["Digital Gold"]);
+      } else {
+        // Handle errors
+        console.error("Failed to send user information.");
+      }
+    } catch (error) {
+      console.error("Error sending user information:", error);
+    }
 
-    // setResult(userInfo);
-    setTimeout(() => {
-      setAdvancedResult(surveyInfo);
-      setIsLoading(false);
-    }, 2000);
+    // setIsLoading(true);
+
+    // // setResult(userInfo);
+    // setTimeout(() => {
+    //   setAdvancedResult(surveyInfo);
+    //   setIsLoading(false);
+    // }, 2000);
   };
 
   return (

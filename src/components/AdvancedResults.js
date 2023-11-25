@@ -3,6 +3,13 @@ import { fdData, dbtMutualFundData, digitalGoldData } from "@/_constants";
 import Suggestions from "../components/Suggestions";
 
 const AdvancedResults = ({ advancedResult, setAdvancedResult }) => {
+  console.log(advancedResult);
+  const fd = parseInt(advancedResult["Fixed Deposit"]);
+  const dg = parseInt(advancedResult["Digital Gold"]);
+  const dmf = parseInt(advancedResult["Debt Mutual Fund"]);
+  const emf = parseInt(advancedResult["Equity Mutual Fund"]);
+
+  const expectedReturn = (emf * 12 + dg * 7.8 + dmf * 8 + fd * 7) / 100;
   return (
     <>
       <div className="flex flex-col">
@@ -16,10 +23,10 @@ const AdvancedResults = ({ advancedResult, setAdvancedResult }) => {
               series={[
                 {
                   data: [
-                    { value: 20, color: "#11009E" },
-                    { value: 5, color: "#4942E4" },
-                    { value: 15, color: "#8696FE" },
-                    { value: 60, color: "#C4B0FF" },
+                    { value: fd, color: "#11009E" },
+                    { value: dg, color: "#4942E4" },
+                    { value: dmf, color: "#8696FE" },
+                    { value: emf, color: "#C4B0FF" },
                   ],
                 },
               ]}
@@ -49,7 +56,7 @@ const AdvancedResults = ({ advancedResult, setAdvancedResult }) => {
                 {" "}
                 <h2 className="font-semibold h-1/4">Expected Returns</h2>
                 <div className="flex justify-center items-center h-16 w-16 text-2xl text-bold text-sans ">
-                  <span>9.6%</span>
+                  <span>{expectedReturn}</span>
                 </div>
               </div>
             </div>
